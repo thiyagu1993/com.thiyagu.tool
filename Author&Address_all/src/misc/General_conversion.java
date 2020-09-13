@@ -35,6 +35,21 @@ public class General_conversion {
 		return s.replace("First Affiliated Hospital", "Affiliated Hosp 1");
 	}
 	
+	if(s.contains("The Second Affiliated Hospital")){
+		return s.replace("The Second Affiliated Hospital", "Affiliated Hosp 2");
+	}
+	
+	if(s.contains("Second Affiliated Hospital")){
+		return s.replace("Second Affiliated Hospital", "Affiliated Hosp 2");
+	}
+	
+	if(s.contains("The Third Affiliated Hospital")){
+		return s.replace("Third Affiliated Hospital", "Affiliated Hosp 3");
+	}
+	
+	if(s.contains("Third Affiliated Hospital")){
+		return s.replace("Third Affiliated Hospital", "Affiliated Hosp 3");
+	}
 	
 	
 	String common[]={"Baustoffforschung"};
