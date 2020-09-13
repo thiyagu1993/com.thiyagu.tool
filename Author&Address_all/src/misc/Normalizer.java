@@ -7,7 +7,7 @@ public class Normalizer {
 	
 	public static String normal(String s){
 		
-	String[] Symbols_drop= {",","“","”","‘","’","(",")",".","'",";"};
+	String[] Symbols_drop= {",","“","”","‘","’","(",")",".","'",";","ʼ","*"};
 	
 	for(String s1 :Symbols_drop){
 		

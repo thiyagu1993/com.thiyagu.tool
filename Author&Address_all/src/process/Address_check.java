@@ -32,7 +32,7 @@ public class Address_check {
 	public static String address_check (Object odoc,Element doc, Element docx,	HashSet<String> we_collect_list, PrintWriter out,String col1, String col2) throws IOException{
 		LinkedHashSet<String> address_list = new LinkedHashSet<String>();
 		ArrayList<String> we_html_idt = new ArrayList<String>();
-		
+		ArrayList<String> we_html_info = new ArrayList<String>();
 		try{
 			JSONParser parser = new JSONParser();
 			
@@ -69,7 +69,7 @@ public class Address_check {
 //		//-------------------------------------------------------
 			
 			String[] we_info = WE_collector.we_collect(address_list.toString());
-			String[] we_html_info = address_list.toArray(new String[address_list.size()]);
+//			String[] we_html_info = address_list.toArray(new String[address_list.size()]);
 			for(String we_info_str:we_info){
 			
 				we_collect_list.add(we_info_str);
@@ -101,13 +101,13 @@ public class Address_check {
 				
 				
 				try{
-					mainorg = doc.select("rsaddr").get(j).getElementsByTag("mainorg").text();
+					mainorg = doc.select("rsaddr").get(j).getElementsByTag("mainorg").text().replace(",", " ");
 				}catch(IndexOutOfBoundsException e){
 					
 					mainorg="";
 				}
 				try{
-					suborg1 = doc.select("rsaddr").get(j).getElementsByTag("suborg1").text();
+					suborg1 = doc.select("rsaddr").get(j).getElementsByTag("suborg1").text().replace(",", " ");
 					
 				}catch(IndexOutOfBoundsException e){
 					
@@ -115,13 +115,13 @@ public class Address_check {
 				}
 				
 				try{
-					suborg2 = doc.select("rsaddr").get(j).getElementsByTag("suborg2").text();
+					suborg2 = doc.select("rsaddr").get(j).getElementsByTag("suborg2").text().replace(",", " ");
 				}catch(IndexOutOfBoundsException e){
 					
 				suborg2="";
 				}
 				try{
-				suborg3 = doc.select("rsaddr").get(j).getElementsByTag("suborg3").text();
+				suborg3 = doc.select("rsaddr").get(j).getElementsByTag("suborg3").text().replace(",", " ");
 				}catch(IndexOutOfBoundsException e){
 					
 				suborg3="";
@@ -149,6 +149,7 @@ public class Address_check {
 				String policy_completed = policy(other_language_completed);
 				
 					String cur_add = policy_completed;
+					we_html_info.add(cur_add);
 					System.out.println(cur_add);
 					
 					if(mainorg.isEmpty()==false){
@@ -213,7 +214,7 @@ public class Address_check {
 					out.write("<thead><tr><th width=\"50%\">IDT</th><th width=\"50%\">CR</th></tr></thead>");		
 					out.write("<tr><td><b>"+col1+"</b></td><td><b>"+col2+"</b></td></tr>");
 					for(int id=0;id<we_html_idt.size();id++){
-					out.write("<tr><td>"+we_html_idt.get(id)+"</td><td>"+policy(remove_nonalphabetics(alter_space(Normalizer.normal(Acronyms.Acronym(we_html_info[id])))))+"</td></tr>");
+					out.write("<tr><td>"+we_html_idt.get(id)+"</td><td>"+policy(remove_nonalphabetics(alter_space(Normalizer.normal(Acronyms.Acronym(we_html_info.get(id))))))+"</td></tr>");
 					
 				}
 				}			

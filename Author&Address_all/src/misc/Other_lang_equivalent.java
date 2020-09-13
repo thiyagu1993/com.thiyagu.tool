@@ -9,6 +9,7 @@ import country_policy_conv.Convert_colombia;
 import country_policy_conv.Convert_costa_rica;
 import country_policy_conv.Convert_cuba;
 import country_policy_conv.Convert_ecuador;
+import country_policy_conv.Convert_france;
 import country_policy_conv.Convert_germany;
 import country_policy_conv.Convert_honduras;
 import country_policy_conv.Convert_italy;
@@ -34,7 +35,7 @@ public class Other_lang_equivalent {
 		String country="";
 
 		try{
-			country = s.toLowerCase().substring(s.lastIndexOf(" ")).trim();
+			country = s.replace(".", "").toLowerCase().substring(s.lastIndexOf(" ")).trim();
 		}catch(Exception e){
 			e.printStackTrace();
 			return s;
@@ -43,7 +44,7 @@ public class Other_lang_equivalent {
 		for(int i=0;i<Excel_resource.country_list.size();i++){
 
 			if(country.equals(Excel_resource.country_list.get(i).toLowerCase())){
-				System.out.println(country);
+				
 				switch(country){
 
 				case "germany":
@@ -55,7 +56,10 @@ public class Other_lang_equivalent {
 
 					return ret_string = Convert_spain.conv(s);
 
+				case "france":
 
+					return ret_string = Convert_france.conv(s);
+					
 				case "mexico":
 
 					return ret_string = Convert_mexico.conv(s);

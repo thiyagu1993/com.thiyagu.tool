@@ -10,19 +10,19 @@ public class General_conversion {
 		}catch(Exception e){
 			return s;
 		}
-		if(country=="italy"){
+		if(country.equals("italy")){
 		
-			return s.replace(" studi ", "");
+			return s.replace(" studi ", "").replace(" Studi ", "");
 	
 		}
 
 	if(s.contains("University of California")){
-	System.out.println("returning calif "+univ_calif(s));
+	
 		return univ_calif(s);
 	}
 	
 	if(s.contains("University of Pennsylvania")&&s.contains("Philadelphia")){
-		if(country=="USA"){
+		if(country.equals("USA")){
 		return s.replace("University of Pennsylvania", "Univ Penn");
 		}
 		}
@@ -44,10 +44,12 @@ public class General_conversion {
 	}
 	
 	if(s.contains("The Third Affiliated Hospital")){
-		return s.replace("Third Affiliated Hospital", "Affiliated Hosp 3");
+		
+		return s.replace("The Third Affiliated Hospital", "Affiliated Hosp 3");
+		
 	}
-	
 	if(s.contains("Third Affiliated Hospital")){
+		
 		return s.replace("Third Affiliated Hospital", "Affiliated Hosp 3");
 	}
 	
@@ -66,8 +68,8 @@ public class General_conversion {
 	
 public static String univ_calif(String c){
 	
-	String [] full_calif = {"University of California Berkeley","University of California Davis","University of California Irvine","University of California Los Angeles","University of California Riverside","University of California San Diego","University of California San Francisco","University of California Santa Barbara","University of California Santa Cruz"};
-	String [] abb_calif = {"Univ Calif Berkeley","Univ Calif Davis","Univ Calif Irvine","Univ Calif Los Angeles","Univ Calif Riverside","Univ Calif San Diego","Univ Calif San Francisco","Univ Calif Santa Barbara","Univ Calif Santa Cruz"};
+	String [] full_calif = {"University of California Berkeley","University of California Davis","University of California Irvine","University of California Los Angeles","University of California Riverside","University of California San Diego","University of California San Francisco","University of California Santa Barbara","University of California Santa Cruz","California State University Long Beach"};
+	String [] abb_calif = {"Univ Calif Berkeley","Univ Calif Davis","Univ Calif Irvine","Univ Calif Los Angeles","Univ Calif Riverside","Univ Calif San Diego","Univ Calif San Francisco","Univ Calif Santa Barbara","Univ Calif Santa Cruz","Calif State Univ Long Beach"};
 	String c_ret = c.replace(",", "");
 	
 	for (int c1 = 0;c1<full_calif.length;c1++){
