@@ -51,7 +51,6 @@ public class General_conversion {
 		return s.replace("Third Affiliated Hospital", "Affiliated Hosp 3");
 	}
 	
-	
 	String common[]={"Baustoffforschung"};
 	String common_rep[]={"Baustoffforsch"};
 	
