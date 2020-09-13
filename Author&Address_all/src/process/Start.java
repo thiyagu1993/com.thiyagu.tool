@@ -59,7 +59,7 @@ import resource.Word_endings;
 import resource.Word_endings2;
 
 public class Start {
-//first commit and received and here is the response
+//first commit and received and here is the response another response
 	public static String acc = "";
 	private static String name="";
 	private static String itemno="";
