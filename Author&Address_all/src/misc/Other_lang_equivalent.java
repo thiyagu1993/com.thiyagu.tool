@@ -84,6 +84,11 @@ public class Other_lang_equivalent {
 
 					return ret_string = Convert_brazil.conv(s);
 
+				case "brasil":
+
+					return ret_string = Convert_brazil.conv(s);
+					
+					
 				case "mozabique":
 
 					return ret_string = Convert_mozabique.conv(s);
