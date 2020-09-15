@@ -14,7 +14,7 @@ public class Normalizer {
 		s = s.replace(s1, "");
 	}
 	
-	String[] Symbols_change= {"-","‐","‑","–","/"};
+	String[] Symbols_change= {"-","‐","‑","–","/","—"};
 
 	for(String s2 :Symbols_change){
 		

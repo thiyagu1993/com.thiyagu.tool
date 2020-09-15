@@ -185,7 +185,7 @@ public class Start {
 						ar_type.add("Author");
 					}
 				}
-
+try{
 				char g=mail.charAt(mail.length()-1);
 				if(g <= 47 && g >= 32 ){
 //					System.out.println("Punctuation at end of Email");
@@ -195,6 +195,10 @@ public class Start {
 					ar_Name.add(name);
 					ar_cat.add("E-mail");
 					ar_type.add("Author");	
+				}
+				
+		}catch(StringIndexOutOfBoundsException ste){
+					ste.printStackTrace();
 				}
 			}
 			
