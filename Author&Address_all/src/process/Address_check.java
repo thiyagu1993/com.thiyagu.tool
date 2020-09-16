@@ -283,12 +283,12 @@ public static String policy(String it){
 	
 	String wd5 = insig_sentence;
 	
-	for(int l1=0;l1<Foreign_insignificant.finsig_list.length;l1++){
+	/*for(int l1=0;l1<Foreign_insignificant.finsig_list.length;l1++){
 		
 		
 		wd5 = wd5.replace(Foreign_insignificant.finsig_list[l1], " ").replace("  ", " ");
 		
-		}
+		}*/
 
 	return wd5;
 }
