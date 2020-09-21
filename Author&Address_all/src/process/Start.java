@@ -59,7 +59,7 @@ import resource.Word_endings;
 import resource.Word_endings2;
 
 public class Start {
-		//del
+		//
 	public static String acc = "";
 	private static String name="";
 	private static String itemno="";
