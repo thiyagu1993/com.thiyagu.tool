@@ -10,7 +10,7 @@ public class Initial_Bump_splitter {
 		Pattern in1 = Pattern.compile("\\b[A-Z][A-Z][A-Z]. \\w+\\b|\\b[A-Z][A-Z][A-Z] \\w+\\b");
 		Pattern in = Pattern.compile("\\b[A-Z][A-Z]. \\w+\\b|\\b[A-Z][A-Z] \\w+\\b");
 		Pattern in2 = Pattern.compile("\\b[A-Z]\\w+[A-Z]\\w+\\b");
-		
+		//
 		Matcher m = in.matcher(s);
 		Matcher m1 = in1.matcher(s);
 		Matcher m2 = in2.matcher(s);
