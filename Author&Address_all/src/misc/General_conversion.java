@@ -19,7 +19,7 @@ public class General_conversion {
 		}
 
 	if(s.contains("University of California")){
-	
+	System.out.println("enter");
 		return univ_calif(s);
 	}
 	
@@ -72,11 +72,12 @@ public static String univ_calif(String c){
 	
 	String [] full_calif = {"University of California Berkeley","University of California Davis","University of California Irvine","University of California Los Angeles","University of California Riverside","University of California San Diego","University of California San Francisco","University of California Santa Barbara","University of California Santa Cruz","California State University Long Beach"};
 	String [] abb_calif = {"Univ Calif Berkeley","Univ Calif Davis","Univ Calif Irvine","Univ Calif Los Angeles","Univ Calif Riverside","Univ Calif San Diego","Univ Calif San Francisco","Univ Calif Santa Barbara","Univ Calif Santa Cruz","Calif State Univ Long Beach"};
-	String c_ret = c.replace(",", "");
+	String c_ret = c.replace(",", "").replace(" at ", " ").replace("  ", " ");
 	
 	for (int c1 = 0;c1<full_calif.length;c1++){
 		
 	if(c_ret.contains(full_calif[c1])){
+		
 		return c_ret.replace(full_calif[c1], abb_calif[c1]);
 	}		
 	}
