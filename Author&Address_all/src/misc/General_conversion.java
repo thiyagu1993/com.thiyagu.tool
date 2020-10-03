@@ -6,13 +6,15 @@ public class General_conversion {
 	
 		String country="";
 		try{
-		country = s.toLowerCase().trim().substring(s.lastIndexOf(" "));
+		country = s.toLowerCase().substring(s.lastIndexOf(" "));
 		}catch(Exception e){
+			e.printStackTrace();
 			return s;
 		}
-		if(country.equals("italy")){
 		
-			return s.replace(" studi ", "").replace(" Studi ", "");
+		if(country.trim().equals("italy")){
+		
+			return s.replace(" studi ", " ").replace(" Studi ", " ");
 	
 		}
 

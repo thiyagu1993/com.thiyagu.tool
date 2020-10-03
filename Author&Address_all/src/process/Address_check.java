@@ -272,7 +272,15 @@ public static String policy(String it){
 	
 	for(int hl=0;hl<Excel_resource.hold1.size();hl++){
 		
-		abb_sentence = abb_sentence.replace(Excel_resource.hold1.get(hl),Excel_resource.hold2.get(hl));
+		if(abb_sentence.contains(Excel_resource.hold1.get(hl))){
+		if(abbreviation_check(abb_sentence,Excel_resource.hold1.get(hl))==true){
+			continue;
+		}
+			abb_sentence = abb_sentence.replace(Excel_resource.hold1.get(hl),Excel_resource.hold2.get(hl));	
+		
+		}
+		
+	
 	}
 	
 	String insig_sentence = abb_sentence.replace(" and ", " & ");
@@ -408,5 +416,26 @@ public static String alter_space(String s){
 	s1.insert(i, " ");
 	
 	return s1.toString();
+}
+
+public static boolean abbreviation_check(String s, String s1){
+	
+	try{
+	int index = s.indexOf(s1);
+
+	if(Character.isAlphabetic(index+s1.length())){
+		
+		return true;
+		
+	}
+	}catch(Exception e){
+		e.printStackTrace();
+		
+		return false;
+	}
+	
+		
+	
+	return false;
 }
 }
