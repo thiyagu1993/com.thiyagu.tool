@@ -588,7 +588,7 @@ try{
 					
 					Set<String> set1 = new HashSet<String>();
 					Collections.addAll(set1, transpose_docx);
-					
+
 					int count=0;
 					System.out.println(transpose_doc.length+" size "+transpose_docx.length);
 				if(transpose_doc.length==transpose_docx.length){

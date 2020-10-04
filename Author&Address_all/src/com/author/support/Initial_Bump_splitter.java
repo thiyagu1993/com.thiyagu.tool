@@ -25,7 +25,7 @@ public class Initial_Bump_splitter {
 			sb.insert(icount, ' ');
 			sb.insert(icount+2, ' ');
 			
-			
+			System.out.println("entering m1"+sb.toString());
 			return sb.toString();
 				
 		}
@@ -36,7 +36,7 @@ public class Initial_Bump_splitter {
 			StringBuilder sb = new StringBuilder(s);
 			System.out.println("m"+m.group());
 			sb.insert(icount, ' ');
-			System.out.println("entering 2"+sb.toString());
+			System.out.println("entering m"+sb.toString());
 			return sb.toString();
 				
 		}

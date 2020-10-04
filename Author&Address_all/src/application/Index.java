@@ -129,12 +129,7 @@ public class Index {
 		btnOutpu.setBounds(655, 397, 102, 46);
 		btnOutpu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-			try {
-				Html_output.html("");
-			} catch (FileNotFoundException | UnsupportedEncodingException | NoSuchFieldException | SecurityException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			
 			System.exit(0);
 			}
 		});
