@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
@@ -20,6 +21,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import com.author.support.Initial_Bump_splitter;
 
 import misc.Normalizer_author;
+import process.Author_check2;
 
 public class Test_author {
 	
@@ -56,6 +58,8 @@ public class Test_author {
 	
 
 public static void author_testing(String col1, String col2){
+	ArrayList<String> ar1 = new ArrayList<String>();
+	ArrayList<String> ar2 = new ArrayList<String>();
 	
 	String[] symbols = {"á","À","â","ă","ā","ã","å","ą","Â","æ","ć","č","ç","ď","Đ","ð","Ɖ","é","è","ė","ê","ë","ě","ę","ȩ","ǧ","ğ","ı","í","ì","İ","î","ï","ĭ","ị","Ľ","ł","ń","ň","ñ","Ó","ò","ô","õ","ő","Ø","œ","Ř","ś","Š","ş","ș","ß","ť","ţ","Þ","ú","ù","û","ū","ů","ű","ý","ÿ","ź","ż","Ž","β","А","К","Ä","à","ó","ø","Ö","Ü","ç","É","Å","Ñ","Ç","ž","Ş","Ś","Á","Č","š","ř","Ż","Ł","Ú","ӧ","Ć","ț","ľ","ō","đ","ó","í","ũ","Ș","ř","a̧","ī","ļ","ņ","Ē","Ť","ģ","Ź","ẚ","ǖ","Ť","Ď","þ","Ð","ӑ","ē","ấ","ư","ờ","ǵ"};
 	String[] alphabet= {"a","A","a","a","a","a","a","a","A","ae","c","c","c","d","D","d","D","e","e","e","e","e","e","e","e","g","g","i","i","i","I","i","i","i","i","L","l","n","n","n","O","o","o","o","o","O","oe","R","s","S","s","s","ss","t","t","th","u","u","u","u","u","u","y","y","z","z","Z","ss","A","K","A","a","o","o","O","U","c","E","A","N","C","z","S","S","A","C","s","r","Z","L","U","o","C","t","l","o","d","o","i","u","S","r","a","i","l","n","E","T","g","Z","a","u","T","D","th","D","a","e","a","u","o","g"};
@@ -87,7 +91,8 @@ public static void author_testing(String col1, String col2){
 		for(int ii=0;ii<docauthor.length;ii++){
 					
 	System.out.println(docauthor[ii]+" -:- "+xdocauthor_size[ii]);
-	
+	ar1.add(docauthor[ii]);
+	ar2.add(xdocauthor_size[ii]);
 	if(docauthor[ii].equalsIgnoreCase(xdocauthor_size[ii].replace("ä", "a").replace("ö", "o").replace("ü", "u"))){
 
 		author_total_count++;
@@ -97,6 +102,7 @@ public static void author_testing(String col1, String col2){
 		String[] transpose_doc  = Initial_Bump_splitter.bump_splitter(docauthor[ii]).trim().split(" ");
 		String[] transpose_docx = Initial_Bump_splitter.bump_splitter(xdocauthor_size[ii]).trim().split(" ");
 		System.out.println(docauthor[ii]+" "+xdocauthor_size[ii]);
+		
 		Set<String> set = new HashSet<String>();
 		Collections.addAll(set, transpose_doc);
 		
@@ -146,11 +152,17 @@ public static void author_testing(String col1, String col2){
 		System.out.println(author_total_count+" match count "+total_docauthor);
 		
 		if(author_total_count==total_docauthor){
-		System.out.println("AUTHOR MATCH");	
+		System.out.println("AUTHOR MATCH"+col1+"$"+col2);	
 		}else if(author_total_count!=total_docauthor){
 		
-			System.out.println("MISMATCH");
-		
+			/*if(Author_check2.Author_check_two(ar1, ar2)==true){
+				System.out.println("AUTHOR CHECK 2 MATCH"+col1+"$"+col2);
+			}else{
+				System.out.println("AUTHOR MISMATCH"+col1+"$"+col2);	
+			}*/
+			System.out.println("AUTHOR MISMATCH"+col1+"$"+col2);
+			
+			
 		}
 		
 	}else{
