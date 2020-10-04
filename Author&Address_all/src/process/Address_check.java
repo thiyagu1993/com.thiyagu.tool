@@ -140,7 +140,7 @@ public class Address_check {
 				
 				String acronym_completed = Acronyms.Acronym(normalizer_completed);
 				
-				String alter_space_completed = alter_space(acronym_completed);
+				String alter_space_completed = alter_space(acronym_completed);//Alter space disabled
 				
 				String remove_nonalphabetics_completed = remove_nonalphabetics(alter_space_completed);
 				
@@ -408,7 +408,7 @@ public static String alter_space(String s){
 		
 	s1.insert(i, " ");
 	
-	return s1.toString();
+	return s.toString();
 }
 
 
