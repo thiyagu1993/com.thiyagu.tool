@@ -568,7 +568,7 @@ try{
 					
 					for(int ii=0;ii<aut_size;ii++){
 			
-				String docauthor = doc.getElementsByTag("author").get(ii).attr("imtxt").replace("$A-O$", "").replace("[", "").replace("]", "").replace(".", " ").replace("Jr", "").replace("III", "").replace("Sr", "").replace("II", "").replace("  ", " ");
+				String docauthor = doc.getElementsByTag("author").get(ii).attr("imtxt").replace("$A-O$", "").replace("[", "").replace("]", "").replace(".", " ").replace("III", "").replace("II", "").replace("  ", " ");
 								
 				System.out.println(docauthor+" -:- "+xdocauthor_size[ii]);
 				
