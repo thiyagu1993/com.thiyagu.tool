@@ -9,7 +9,7 @@ public class Initial_Bump_splitter {
 		
 		Pattern in1 = Pattern.compile("\\b[A-Z][A-Z][A-Z]. \\w+\\b|\\b[A-Z][A-Z][A-Z] \\w+\\b");
 		Pattern in = Pattern.compile("\\b[A-Z][A-Z]. \\w+\\b|\\b[A-Z][A-Z] \\w+\\b");
-		Pattern in2 = Pattern.compile("\\b[A-Z]\\{3,}[A-Z]\\w+\\b");
+		Pattern in2 = Pattern.compile("\\b[A-Z]{1}[a-z]{3,}[A-Z]\\w+\\b|\\b[A-Z]{1}[a-z]{3,}[A-Z]\\w+\\s");
 		Pattern in3 = Pattern.compile("\\b\\w+[A-Z]{1} ");
 		//
 		Matcher m = in.matcher(s);
@@ -47,7 +47,7 @@ public class Initial_Bump_splitter {
 			char[] jj = s.toCharArray();
 			
 			for(int h=0;h<s.indexOf(" ");h++){
-				System.out.println(m2.group());
+				
 				if(Character.isUpperCase(jj[h+1])){
 			
 					icount = h+1;
