@@ -4,9 +4,9 @@ public class Normalizer_author {
 
 	public static String normal_author(String s){
 	
-		String[] Symbols= {".-","‐","’","-","  ",".","–","‑"," ","Mª"};
+		String[] Symbols= {".-"," -","‐","’","-","  ",".","–","‑"," ","Mª"};
 		
-		String[] rep_symbols={"-","-","'","-"," "," ","-","-"," ","Ma"};
+		String[] rep_symbols={"-","-","-","'","-"," "," ","-","-"," ","Ma"};
 		
 		for(int i=0;i<Symbols.length;i++){
 	
