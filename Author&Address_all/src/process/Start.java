@@ -568,7 +568,7 @@ try{
 					
 					for(int ii=0;ii<aut_size;ii++){
 			
-				String docauthor = doc.getElementsByTag("author").get(ii).attr("imtxt").replace("$A-O$", "").replace("[", "").replace("]", "").replace(".", " ").replace("III", "").replace("II", "").replace("  ", " ");
+				String docauthor = Normalizer_author.normal_author(doc.getElementsByTag("author").get(ii).attr("imtxt").replace("$A-O$", "").replace("[", "").replace("]", "").replace(".", " ").replace("III", "").replace("II", "").replace("  ", " "));
 								
 				System.out.println(docauthor+" -:- "+xdocauthor_size[ii]);
 				
@@ -590,7 +590,7 @@ try{
 					Collections.addAll(set1, transpose_docx);
 
 					int count=0;
-					System.out.println(transpose_doc.length+" size "+transpose_docx.length);
+					System.out.println(transpose_doc.length+" set size "+transpose_docx.length);
 				if(transpose_doc.length==transpose_docx.length){
 					
 					for(String namedoc:set){
@@ -598,6 +598,7 @@ try{
 						for(String namedocx:set1){	
 //						System.err.println(namedocx+" "+namedoc);
 							if(namedoc.trim().equalsIgnoreCase(namedocx.trim().replace("ä", "a").replace("ö", "o").replace("ü", "u"))){
+							
 								count++;										
 							}else{
 							
@@ -709,7 +710,7 @@ try{
 		}
 		
 	if(set_p.size()==count){
-//		System.out.println("Placement author match");
+		System.out.println("Placement author match");
 	return true;
 	}
 		
@@ -829,11 +830,9 @@ try{
 			
 				continue;
 			}
-			}catch(NumberFormatException e){
+			}catch(Exception e){
 				e.printStackTrace();
 				continue;
-			}catch(NullPointerException ne){
-				ne.printStackTrace();continue;
 			}
 			
 			
