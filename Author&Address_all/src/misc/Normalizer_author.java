@@ -7,6 +7,7 @@ public class Normalizer_author {
 		String[] Symbols= {".-"," -","‐","’","-","  ",".","–","‑"," ","Mª"};
 		
 		String[] rep_symbols={"-","-","-","'","-"," "," ","-","-"," ","Ma"};
+
 		
 		for(int i=0;i<Symbols.length;i++){
 	
