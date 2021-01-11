@@ -986,7 +986,7 @@ try{
 		
 			
 			}
-			if(linking_count==1){
+			if(linking_count==1&&research_author_link>=2){
 				System.out.println("Linking Missed AuthorID: "+unlink_author);
 				ar.add("Linking Missed AuthorID: "+unlink_author);
 				ar_itemno.add(itemno);

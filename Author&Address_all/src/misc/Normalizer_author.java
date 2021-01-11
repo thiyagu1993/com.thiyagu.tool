@@ -15,7 +15,7 @@ public class Normalizer_author {
 		
 		}
 		System.out.println("normal "+s.replace("  ", " "));
-		return s.replace("  ", " ");
+		return s.replace("  ", " ").replaceAll(" Jr\\b", "");
 	}
 		
 }
