@@ -986,7 +986,9 @@ try{
 		
 			
 			}
-			if(linking_count==1&&research_author_link>=2){
+			System.out.println("size "+research_author_link);
+			
+			if(linking_count==1&&research_author_link>2){
 				System.out.println("Linking Missed AuthorID: "+unlink_author);
 				ar.add("Linking Missed AuthorID: "+unlink_author);
 				ar_itemno.add(itemno);
@@ -2290,6 +2292,9 @@ try{
 			
 		}
 
+		
+		
+		
 		java.util.List<String> rs_li = Arrays.asList(arr);
 		
 		Set<String> set = new HashSet<String>();
@@ -2304,7 +2309,7 @@ try{
 				ar_itemno.add(itemno);
 				ar_acc.add(acc);
 				ar_Name.add(name);
-				ar_cat.add("Duplicate Res Address");
+				ar_cat.add("Duplicate Res Address " +str);
 				ar_type.add("Address");
 			
 			}
