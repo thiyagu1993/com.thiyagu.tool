@@ -19,12 +19,22 @@ public class Excel_resource {
 	public static ArrayList<String> hold1;
 	public static ArrayList<String> hold2;
 	
+	public static ArrayList<String> country_code1;
+	public static ArrayList<String> country_code2;
+	
 	public static ArrayList<String> country_list;
+	
+	public static ArrayList<String> Particle_list;
 	
 	public static void new_resource() throws IOException{
 		hold1 = new ArrayList<String>();
 		hold2 = new ArrayList<String>();
 		country_list = new ArrayList<String>();
+		
+		country_code1 = new ArrayList<String>();
+		country_code2 =	new ArrayList<String>();
+		
+		Particle_list = new ArrayList<String>();
 		
 		FileInputStream file = new FileInputStream(new File("C:\\Address_test_all\\Author&Address_all\\DATA\\resource_db.xlsx"));
 		XSSFWorkbook wb = new XSSFWorkbook(file);
@@ -74,6 +84,52 @@ public class Excel_resource {
 			System.exit(0);	
 		}
 		
+		
+		//TODO=========================================
+		
+		XSSFSheet cc_sheet = wb.getSheetAt(2);
+		
+		try{
+			for(int cc=0;cc<cc_sheet.getLastRowNum()+1;cc++){
+				Row r_country_code = cc_sheet.getRow(cc);	
+				Cell cell_country_code1 = r_country_code.getCell(0);
+				Cell cell_country_code2 = r_country_code.getCell(1);
+			
+			country_code1.add(cell_country_code1.toString());
+			country_code2.add(cell_country_code2.toString());
+				
+			}
+				
+			
+			}catch(Exception e){
+				e.printStackTrace();
+				System.out.println("countryCODE_list not loaded");
+				JOptionPane.showMessageDialog(Index.frmJava, "COUNTRY CODE LIST NOT LOADED", "", JOptionPane.WARNING_MESSAGE);
+				System.exit(0);	
+			}
+		
+		if(country_code1.size()!=country_code2.size()){
+			JOptionPane.showMessageDialog(Index.frmJava, "COUNTRY CODE LIST NOT LOADED", "", JOptionPane.WARNING_MESSAGE);
+			System.exit(0);
+			}
+		
+		
+		//TODO=========================================
+		
+				XSSFSheet pl_sheet = wb.getSheetAt(3);
+				
+				try{
+					for(int pl=0;pl<pl_sheet.getLastRowNum()+1;pl++){
+						Row particle_list_row = pl_sheet.getRow(pl);	
+						Cell particle_list1 = particle_list_row.getCell(0);
+						Particle_list.add(particle_list1.toString());
+					}
+				}catch(Exception e){
+					e.printStackTrace();
+					System.out.println("Particle_list not loaded");
+					JOptionPane.showMessageDialog(Index.frmJava, "PARTICLE LIST NOT LOADED", "", JOptionPane.WARNING_MESSAGE);
+					System.exit(0);	
+				}
 		
 	wb.close();
 	file.close();
